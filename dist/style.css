@@ -1,0 +1,254 @@
+* {
+  outline: none;
+  font-family: "Montserrat", sans-serif !important;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.button, .checkmark {
+  background-color: #dedede;
+  border: 0;
+  border-radius: 50%;
+  box-shadow: 0 0 0 0 rgba(190, 190, 220, 0.2);
+  color: white;
+  height: 30px;
+  margin: 0 0.5rem 0 0;
+  cursor: pointer;
+  position: relative;
+  transition: box-shadow 0.2s;
+  width: 30px;
+}
+.button:hover, .checkmark:hover {
+  background-color: #ccc;
+}
+.button:active, .checkmark:active {
+  background: #2196F3;
+  box-shadow: 0 0 15px 40px rgba(220, 220, 250, 0);
+}
+
+.autoplay-controls {
+  cursor: pointer;
+}
+.autoplay-controls:active > .checkmark {
+  background: #2196F3;
+  box-shadow: 0 0 15px 40px rgba(220, 220, 250, 0);
+}
+
+.slider_container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  min-height: 400px;
+  width: 900px;
+}
+
+.slide_counter {
+  float: right;
+  margin: 0 1rem;
+}
+
+.slides {
+  height: 400px;
+  overflow: hidden;
+  position: relative;
+  width: 900px;
+}
+
+.navigation-buttons {
+  display: inherit;
+  align-items: center;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.slider_navigation {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: row;
+  height: 20px;
+  justify-content: space-between;
+  position: relative;
+  width: 100%;
+}
+
+.loader {
+  background-color: white;
+  background-image: url("https://editionsdelarose.com/wp-content/themes/edr/img/loading.gif");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 150px;
+  height: 100%;
+  position: absolute;
+  width: 100%;
+  z-index: 300;
+}
+
+input {
+  display: none;
+}
+input:checked ~ .checkmark:after {
+  display: block;
+}
+input:checked ~ .checkmark {
+  background-color: #2196F3;
+}
+
+.autoplay-sub {
+  float: left;
+  line-height: 30px;
+  font-size: 0.7rem;
+}
+
+.checkmark {
+  float: left;
+}
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+  left: 11px;
+  top: 7px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.button-left:after, .button-right:after {
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  content: "";
+  display: block;
+  height: 8px;
+  position: absolute;
+  width: 8px;
+}
+
+.button-left:after {
+  left: 11px;
+  top: 10px;
+  -webkit-transform: rotate(135deg);
+          transform: rotate(135deg);
+}
+
+.button-right:after {
+  left: 7px;
+  top: 10px;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+.inright {
+  -webkit-animation: goInL 0.5s cubic-bezier(1, 1.59, 0.61, 0.74);
+          animation: goInL 0.5s cubic-bezier(1, 1.59, 0.61, 0.74);
+  position: relative;
+  z-index: 300 !important;
+}
+
+@-webkit-keyframes goInL {
+  0% {
+    left: -900px;
+  }
+  100% {
+    left: 0;
+  }
+}
+
+@keyframes goInL {
+  0% {
+    left: -900px;
+  }
+  100% {
+    left: 0;
+  }
+}
+.outright {
+  -webkit-animation: goOutL 0.5s cubic-bezier(1, 1.59, 0.61, 0.74);
+          animation: goOutL 0.5s cubic-bezier(1, 1.59, 0.61, 0.74);
+  position: relative;
+  z-index: 200;
+}
+
+@-webkit-keyframes goOutL {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: 900px;
+  }
+}
+
+@keyframes goOutL {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: 900px;
+  }
+}
+.inleft {
+  -webkit-animation: goInR 0.5s cubic-bezier(1, 1.59, 0.61, 0.74);
+          animation: goInR 0.5s cubic-bezier(1, 1.59, 0.61, 0.74);
+  position: relative;
+  z-index: 300 !important;
+}
+
+@-webkit-keyframes goInR {
+  0% {
+    left: 900px;
+  }
+  100% {
+    left: 0;
+  }
+}
+
+@keyframes goInR {
+  0% {
+    left: 900px;
+  }
+  100% {
+    left: 0;
+  }
+}
+.outleft {
+  -webkit-animation: goOutR 0.5s cubic-bezier(1, 1.59, 0.61, 0.74);
+          animation: goOutR 0.5s cubic-bezier(1, 1.59, 0.61, 0.74);
+  position: relative;
+  z-index: 200;
+}
+
+@-webkit-keyframes goOutR {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: -900px;
+  }
+}
+
+@keyframes goOutR {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: -900px;
+  }
+}
+.pic {
+  left: 0;
+  min-height: 400px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  position: absolute;
+  top: 0;
+  width: 900px;
+}
+.pic:first-child {
+  z-index: 100;
+}

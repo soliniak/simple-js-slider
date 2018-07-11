@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:700" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<meta name="author" content="Rafał Soliński">
+	<meta name="description" content="Simple Scalable Slideshow Gallery Carousel.  Supports as many img's as you need. Easy, straightforward, short, clean code.  JS / NOT JQuery">
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  	<title>Infinite loop slider, gallery, carousel - Pure JS</title>
+</head>
+<body>
+	<div class="slider_container">
+		<div class="slides">
+			<!-- All images belong to their authors -->
+			<img src="https://goo.gl/zaQ6fm" alt="Biker one" class="pic" name="1">
+			<img src="https://goo.gl/DYs5K8" alt="Biker two" class="pic" name="2">
+			<img src="https://goo.gl/FNfG8G" alt="Biker three" class="pic" name="3">
+			<img src="https://goo.gl/2Jx3m9" alt="Biker four" class="pic" name="4">
+		</div>
+		<nav class="slider_navigation">
+			<div class="navigation-buttons">
+				<button class="button button-left"></button>
+				<button class="button button-right"></button>
+				<label class="autoplay-controls">
+					<input type="checkbox" name="autoplay" checked>
+					<div class="checkmark"></div>
+					<div class="autoplay-sub">Autoplay</div>
+				</label>
+			</div>
+			<span class="slide_counter"></span>
+		</nav>
+	</div>
+	<script src="script.js"></script>
+</body>
+</html>
